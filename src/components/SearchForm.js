@@ -17,6 +17,8 @@ export default class SearchForm extends Component {
           type="text" 
           pattern="\d{5}"
           name="postcode"
+          value={this.props.postcode}
+          onChange={this.props.handlePostcodeChange}
         />
         <button>Bang My Buck</button>
       </div>
