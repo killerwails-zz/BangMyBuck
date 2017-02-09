@@ -9,6 +9,7 @@ import BangForMyBuck from './reducers';
 import App from './App';
 import './index.css';
 import { ProductSearch } from './sagas/ProductSearch';
+import { RetailerSearch } from './sagas/RetailerSearch';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
@@ -17,6 +18,7 @@ const store = createStore(
   );
 
 sagaMiddleware.run(ProductSearch);
+sagaMiddleware.run(RetailerSearch);
 
 ReactDOM.render(
   <Provider store={store}>
