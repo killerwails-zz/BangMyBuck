@@ -8,7 +8,7 @@ import createSagaMiddleware from 'redux-saga';
 import BangForMyBuck from './reducers';
 import App from './App';
 import './index.css';
-import { helloSaga } from './sagas/saga';
+import { ProductSearch } from './sagas/ProductSearch';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
@@ -16,7 +16,7 @@ const store = createStore(
   applyMiddleware(sagaMiddleware)
   );
 
-sagaMiddleware.run(helloSaga);
+sagaMiddleware.run(ProductSearch);
 
 ReactDOM.render(
   <Provider store={store}>
