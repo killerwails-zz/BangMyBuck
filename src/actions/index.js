@@ -4,3 +4,18 @@ export const updatePostcode = (postcode) => {
     postcode
   };
 };
+
+export const updateMoney = (money) => {
+  return {
+    type: 'UPDATE_MONEY',
+    money
+  };
+};
+
+export const search = (postcode, money) => {
+  return {
+    type: 'SEARCH',
+    postcode,
+    money
+  }
+}

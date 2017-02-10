@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 
 
 export default class SearchForm extends Component {
+  constructor () {
+    super();
+
+    this.handleSearch = this.handleSearch.bind(this);
+  }
+
+  handleSearch () {
+    this.props.handleSearch(this.props.postcode, this.props.money);
+  }
+
   render () {
     return (
       <div>
@@ -10,8 +20,9 @@ export default class SearchForm extends Component {
           min="0.01" 
           step="0.01" 
           max="100" 
-          value="50.00" 
           name="money"
+          value={this.props.money}
+          onChange={this.props.handleMoneyChange} 
         />
         <input 
           type="text" 
@@ -20,7 +31,7 @@ export default class SearchForm extends Component {
           value={this.props.postcode}
           onChange={this.props.handlePostcodeChange}
         />
-        <button>Bang My Buck</button>
+        <button onClick={this.handleSearch}>Bang My Buck</button>
       </div>
     );
   }

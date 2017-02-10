@@ -8,6 +8,10 @@ export default combineReducers({
         return Object.assign({}, state, {
           postcode: action.postcode
         })
+      case 'UPDATE_MONEY':
+        return Object.assign({}, state, {
+          money: action.money
+        })
       default:
         return state;
     }

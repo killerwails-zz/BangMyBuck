@@ -3,7 +3,7 @@ const API_ENDPOINT = 'https://admin.duberex.com/vendors/748abe3e-fccf-4265-8b87-
 export const fetchProducts = () => {
   return fetch(API_ENDPOINT).then(function(response){
     return response.json().then(function(json){
-      console.log(json);
+      return json;
     }); 
   });
 };
