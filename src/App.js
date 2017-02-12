@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 
 import './App.css';
 import AvailabilityTable from './components/AvailabilityTable';
-import ProductInfo from './components/ProductInfo';
+import ProductContainer from './containers/ProductContainer';
 import SearchFormContainer from './containers/SearchFormContainer';
-import './endpoints/googleMaps'
 
 export default class App extends Component {
   render() {
@@ -14,7 +13,7 @@ export default class App extends Component {
           <SearchFormContainer />
         </div>
         <div>
-          <ProductInfo />
+          <ProductContainer />
           <AvailabilityTable />
         </div>
       </div>

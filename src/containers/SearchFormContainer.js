@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+
 import SearchForm from '../components/SearchForm';
 import { updatePostcode, updateMoney, search } from '../actions';
 
@@ -9,7 +10,7 @@ const mapStateToProps = (state) => {
   };
 };
 const mapDispatchToProps = (dispatch) => {
-  return{
+  return {
     handlePostcodeChange: (e) => {
       dispatch(updatePostcode(e.target.value));
     },

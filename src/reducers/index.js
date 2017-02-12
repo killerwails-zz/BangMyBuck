@@ -1,20 +1,12 @@
 import { combineReducers } from 'redux';
 
-export default combineReducers({
-  search: (state = { postcode: "", money: 50.00 }, action) => {
-    switch (action.type){
+import search from './search'
+import products from './products'
 
-      case 'UPDATE_POSTCODE':
-        return Object.assign({}, state, {
-          postcode: action.postcode
-        })
-      case 'UPDATE_MONEY':
-        return Object.assign({}, state, {
-          money: action.money
-        })
-      default:
-        return state;
-    }
-  }
+export default combineReducers({
+  
+  search,
+  products
 
 });
+

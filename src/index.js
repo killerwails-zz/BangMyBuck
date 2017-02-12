@@ -8,8 +8,8 @@ import createSagaMiddleware from 'redux-saga';
 import BangForMyBuck from './reducers';
 import App from './App';
 import './index.css';
-import { ProductSearch } from './sagas/ProductSearch';
-import { RetailerSearch } from './sagas/RetailerSearch';
+import postcodeSaga from './sagas/GeocodePostcode';
+import geoProductsSaga from './sagas/GeoProductSearch';
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
@@ -17,8 +17,8 @@ const store = createStore(
   applyMiddleware(sagaMiddleware)
   );
 
-sagaMiddleware.run(ProductSearch);
-sagaMiddleware.run(RetailerSearch);
+sagaMiddleware.run(postcodeSaga);
+sagaMiddleware.run(geoProductsSaga);
 
 ReactDOM.render(
   <Provider store={store}>
