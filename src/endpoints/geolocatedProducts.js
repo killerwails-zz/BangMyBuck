@@ -1,4 +1,4 @@
-const BASE_API_ENDPOINT = 'https://admin.duberex.com/products/geo_search.json';
+const BASE_API_ENDPOINT = 'http://localhost:9292';
 
 export default ({ lat, lng }) => {
   return fetch(`${BASE_API_ENDPOINT}?gps[]=${lat}&gps[]=${lng}&searchText=WA`).then(function(response){

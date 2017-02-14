@@ -8,7 +8,6 @@ function avgTHC (thcRange) {
 }
 
 function filterAndSort (retailersAndProducts) {
-  debugger
   return _.chain(retailersAndProducts)
     .reduce((memo, curr) => { return [...memo, ...curr.products]; },[])
     .reduce( (memo, product) => {
