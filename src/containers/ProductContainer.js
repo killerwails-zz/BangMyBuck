@@ -4,8 +4,8 @@ import ProductList from '../components/ProductList';
   
 const mapStateToProps = (state) => {
   return {
-    retailersAndProducts: state.retailersAndProducts,
-    products: state.products
+    products: state.products.products,
+    retailers: state.products.retailers
   };
 };
 

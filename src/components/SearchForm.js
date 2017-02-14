@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
+import { RaisedButton, TextField } from 'material-ui';
 
 export default class SearchForm extends Component {
   constructor () {
     super();
-
     this.handleSearch = this.handleSearch.bind(this);
   }
 
@@ -13,9 +13,10 @@ export default class SearchForm extends Component {
   }
 
   render () {
+
     return (
       <div>
-        <input 
+        <TextField
           type="number" 
           min="0.01" 
           step="0.01" 
@@ -24,14 +25,18 @@ export default class SearchForm extends Component {
           value={this.props.money}
           onChange={this.props.handleMoneyChange} 
         />
-        <input 
-          type="text" 
-          pattern="\d{5}"
+        <TextField 
+          type="text"
           name="postcode"
+          hintText='input postcode'
           value={this.props.postcode}
           onChange={this.props.handlePostcodeChange}
         />
-        <button onClick={this.handleSearch}>Bang My Buck</button>
+        <RaisedButton 
+          backgroundColor='#2B8425' 
+          labelColor='white'
+          label='Bang My Buck' 
+          onClick={this.handleSearch} />
       </div>
     );
   }

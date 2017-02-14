@@ -4,14 +4,22 @@ import ProductInfo from './ProductInfo';
 
 export default class ProductList extends Component {
   render () {
-    const products = this.props.products.products
+    const { products, retailers } = this.props;
+
     return (
-      <ul>
-        {products.map((product) =>
-          <ProductInfo key={product.id}
-                    product={product} />
-        )}
-      </ul>
+      <div>
+        <ul>
+          {products.map((product) =>{
+            return(
+              <ProductInfo
+                key={product.id}
+                product={product} 
+                retailers={retailers}
+             />
+            )
+           })}
+        </ul>
+      </div>
     );
   }
 };

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import AvailabilityTable from './components/AvailabilityTable';
 import ProductContainer from './containers/ProductContainer';
 import SearchFormContainer from './containers/SearchFormContainer';
 
@@ -14,7 +13,6 @@ export default class App extends Component {
         </div>
         <div>
           <ProductContainer />
-          <AvailabilityTable />
         </div>
       </div>
     );
