@@ -8,17 +8,24 @@ function avgTHC (thcRange) {
 }
 
 function filterAndSort (retailersAndProducts) {
-  return _.reverse( 
-    _.sortBy(
-    _.filter(
-    _.reduce(
-      retailersAndProducts, (memo, curr) => { return [...memo, ...curr.products]; },[]
-    ),
-      p => p.price < 50 && _.includes(["Pre-Rolls","Flowers"], p.category )
-    ),
-    p => avgTHC(p.thc_range)
-    )
-  );
+  debugger
+  return _.chain(retailersAndProducts)
+    .reduce((memo, curr) => { return [...memo, ...curr.products]; },[])
+    .reduce( (memo, product) => {
+      const upId = product.upstream_product_id
+      let existingProduct = memo[upId]
+      if (existingProduct){
+        memo[upId].vendor_ids.push(product.vendor_id);
+      }else{
+        memo[upId] = product;
+        memo[upId].vendor_ids = [product.vendor_id];
+      }
+      return memo
+    },{})
+    .filter( p => p.price < 50 && _.includes(["Pre-Rolls","Flowers"], p.category ))
+    .sortBy( p => avgTHC(p.thc_range))
+    .reverse()
+    .value();
 } 
 
 function* fetchGeoProducts(action) {

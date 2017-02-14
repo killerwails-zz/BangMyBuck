@@ -34,7 +34,7 @@ export default class SearchForm extends Component {
         />
         <RaisedButton 
           backgroundColor='#2B8425' 
-          labelColor='white'
+          labelColor='#FFFFFF'
           label='Bang My Buck' 
           onClick={this.handleSearch} />
       </div>

@@ -7,7 +7,7 @@ export default class ProductList extends Component {
     const { products, retailers } = this.props;
 
     return (
-      <div>
+      <div style={{width:'100%'}}>
         <ul>
           {products.map((product) =>{
             return(
